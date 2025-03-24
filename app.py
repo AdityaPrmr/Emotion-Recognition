@@ -93,11 +93,9 @@ def process_video():
 
     return jsonify({"message": "Processing started. You can close the tab, the server will continue working.Mail will be send to with result."})
 
-
-# if __name__ == '__main__':
-#     port = int(os.environ.get("PORT", 10000))  # Keep as fallback
-#     host = '0.0.0.0'  # Critical for external access
-#     app.run(host=host, port=port, debug=False)
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
-    app.run(host='127.0.0.1', port=port, debug=True)  # Use 127.0.0.1 for local testing
+    try:
+        port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
+        app.run(host='0.0.0.0', port=port, debug=True)  # Use 0.0.0.0 for local testing
+    except Exception as e:
+        print(e)
