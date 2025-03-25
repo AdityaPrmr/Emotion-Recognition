@@ -9,10 +9,12 @@ from processEmotion import doIt
 from email.mime.base import MIMEBase
 from email import encoders
 import time
+from flask_cors import CORS
 
 
 
 app = Flask(__name__)
+CORS(app) 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Function to send email
