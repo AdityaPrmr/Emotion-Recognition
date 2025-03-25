@@ -95,7 +95,7 @@ def process_video():
 
 if __name__ == '__main__':
     try:
-        port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
-        app.run(host='0.0.0.0', port=port, debug=True)  # Use 0.0.0.0 for local testing
+        port = int(os.environ.get("PORT", 10000)) 
+        app.run(host='0.0.0.0', port=port, debug=False) 
     except Exception as e:
         print(e)
